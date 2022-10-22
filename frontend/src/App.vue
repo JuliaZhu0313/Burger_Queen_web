@@ -1,15 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <MainMenu/>
+  <LogIn/>
 </template>
 
 <script>
-import MainMenu from './components/MainMenu.vue'
+import LogIn from './components/LogIn.vue'
 
 export default {
   name: 'App',
   components: {
-    MainMenu
+    LogIn
   }
 }
 </script>

@@ -1,13 +1,13 @@
 import { initializeApp } from 'firbase/app'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA3YoZV6qofdpVd5c8NMDZtfQgymN7Hpts",
-    authDomain: "democpp-80895.firebaseapp.com",
-    projectId: "democpp-80895",
-    storageBucket: "democpp-80895.appspot.com",
-    messagingSenderId: "1007226650942",
-    appId: "1:1007226650942:web:4cffa7287f88471d2bec6f"
-  };
+  apiKey: "AIzaSyCVUzJNCZuJnYWi7FXZcEbcepBUV2x_KzI",
+  authDomain: "group5bt3103-5e14b.firebaseapp.com",
+  projectId: "group5bt3103-5e14b",
+  storageBucket: "group5bt3103-5e14b.appspot.com",
+  messagingSenderId: "895175588433",
+  appId: "1:895175588433:web:302f431d79f222b9dc1670"
+};
  
 // Initialize Firebase
 //const firebase = require('firebase')
