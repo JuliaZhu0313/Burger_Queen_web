@@ -1,11 +1,14 @@
 <template>
     <div class="topnav">
-        <img src="@/assets/logo.png" alt="Burger Queen" width="80" height="80" id="logo">
-        <a class="active" href="#menu">MENU</a>
-        <a href="#cart">CART</a>
-        <a href="#order">ORDER</a>
-        <a href="#login">LOG IN</a>
-        <button class ="cart" @click="Addtocart" type="button">Add to cart</button>
+        <img src="@/assets/logo.png" alt="Burger Queen" width="120" height="80" id="logo">
+        <div id="nav">
+            <router-link class="active" to="/menu">MENU</router-link>
+            <!--<router-link to="/cart">CART</router-link>
+            <router-link to="/order">ORDER</router-link> -->
+            <router-link to="/logout">LOG OUT</router-link>
+        </div>
+        <button class ="cart" @click="Addtocart" type="button">Add to cart</button><br>
+        <div id="welcome"><h2 v-text="welcome"></h2></div>
     </div>
 
     <div class="menu">
@@ -100,18 +103,39 @@
 </template>
 
 <script>
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+
 export default {
     name:'MainMenu',
     
+    mounted() {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            const displayName = user.displayName;
+            console.log(displayName)
+            this.welcome = "Welcome, " + displayName + "!"
+            // ...
+        } else {
+            console.log('signed out')
+            // User is signed out
+            // ...
+        }
+        });
+        console.log(this.welcome)
+    },
+
     data (){
         return {
             scTimer: 0,
             scY: 0,
+            welcome: '',
         }
     },
-    mounted() {
-      window.addEventListener('scroll', this.handleScroll)
-    },
+
     methods: {
         Addtocart(){
             try{
@@ -167,15 +191,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
         .topnav {
           overflow: auto;
-          background-color:#F4EDE5;
+          background-color:#F5EDE6;
           align-content: center;
         }
         
         .topnav a {
-          background-color: hsl(32, 44%, 21%);
+          background-color: #B6815C;
           float: left;
           color: #f2f2f2;
           text-align: center;
@@ -189,25 +213,31 @@ export default {
         }
         
         .topnav a:hover {
-          background-color: #F4EDE5;
+          background-color: rgb(182, 129, 92, 0.3);
           color: black;
         }
         
         .topnav a.active {
-          background-color: #F4EDE5;
+          background-color: rgb(182, 129, 92, 0.3);
           color: black;
         }
 
         .topnav button{
-            background-color: coral;
+            background-color: rgb(238, 120, 1, 1);
             float: right;
             font-size: 17px;
             text-align: center;
             border-radius: 10px; 
         }
+        
+        #welcome{
+            float:inline-end;
+            font-size: 15px;
+            text-align: right;
+        }
 
         .topnav button:hover{
-            background-color: #F4EDE5;
+            background-color: #ffffff;
         }
 
         .number{
@@ -259,6 +289,17 @@ export default {
             margin-left: auto;
             margin-right: auto;
         }
-		
 
+        #nav{
+            padding: 30px;
+            text-align: center;
+        }
+        #nav a{
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+        #nav a.router-link-exact-active {
+            color: rgb(255, 255, 255);
+        }
+		
 </style>

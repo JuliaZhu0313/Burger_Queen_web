@@ -1,5 +1,6 @@
 <template>
   <div class="topnav" style="text-align:center;">
+    <img src="@/assets/logo.png" alt="Burger Queen" width="120" height="80" id="logo">
     <div id = "Welcome"><h1><strong>WELCOME!</strong></h1></div>
     <div id = "Description"><h3>Log in with your Google account or Email</h3></div>
     <div id = "firebaseui-auth-container"></div>
@@ -37,7 +38,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #firebaseui-auth-container{
     margin-top: 50px;
     margin-bottom: 50px;
