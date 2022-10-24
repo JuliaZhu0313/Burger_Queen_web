@@ -25,7 +25,7 @@ export default {
         }
 
         var uiConfig = {
-            signInSuccessUrl: '/',
+            signInSuccessUrl: '/menu',
             signInOptions: [
                 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                 firebase.auth.EmailAuthProvider.PROVIDER_ID,

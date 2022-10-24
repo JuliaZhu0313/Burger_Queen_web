@@ -101,6 +101,8 @@
 
 <script>
 export default {
+    name:'MainMenu',
+    
     data (){
         return {
             scTimer: 0,
