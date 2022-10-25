@@ -5,6 +5,7 @@
         <a href="#cart">CART</a>
         <a href="#order">ORDER</a>
         <a href="#login">LOG IN</a>
+        <button @click="personalCentre">Personal Centre</button>
         <button class ="cart" @click="Addtocart" type="button">Add to cart</button>
     </div>
 
@@ -153,13 +154,16 @@ export default {
                 clearTimeout(this.scTimer);
                 this.scTimer = 0;
                 }, 100);
-      },
-      toTop: function () {
-            window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-            });
-      },
+        },
+        toTop: function () {
+                window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+                });
+        },
+        personalCentre: function() {
+            this.$router.push("/PersonalCentre")
+        }
     }
 
 }
