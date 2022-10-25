@@ -1,16 +1,16 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <MainMenu/>
+  <router-view></router-view>
 </template>
 
 <script>
-import MainMenu from './components/MainMenu.vue'
+// import MainMenu from './components/MainMenu.vue'
 
 export default {
   name: 'App',
-  components: {
-    MainMenu
-  }
+  // components: {
+  //   MainMenu
+  // }
 }
 </script>
 

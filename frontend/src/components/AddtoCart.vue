@@ -43,7 +43,7 @@ methods: {
         alert("Add to cart: "+a)
         try{
         const docRef = await setDoc(doc(db,"Portfolio",a),{
-        Food:a, Price: b, Quantity: c, Total Price: d
+        Food:a, Price: b, Quantity: c, TotalPrice: d
     })
         console.log(docRef)
         document.getElementById("burgerqueen").reset();
