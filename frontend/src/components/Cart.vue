@@ -18,7 +18,7 @@
             </td>
             <td data-th="Subtotal" class="text-center">Subtotal: ${{ subtotal(item.amount, item.price) }}</td>
             <td>
-                <button class="delete" @click="new_delete(item.name)">Delete</button>
+                <button class="delete" @click="new_delete(item.name);">Delete</button>
             </td>
         </div>
         </tr>
@@ -40,8 +40,6 @@
     import {getAuth, onAuthStateChanged} from 'firebase/auth';
 
     const db = getFirestore(firebaseApp);
-    const auth = getAuth();
-	
 	export default {
         name: 'cart',
     data() {
@@ -51,18 +49,20 @@
     }
 	},
 	async mounted() {
-	onAuthStateChanged(auth, (user)=>{
-    if (user) { 
-		this.user=user;
-	}
-	});
-    await this.getAll();
+        const auth = getAuth();
+        onAuthStateChanged(auth, async (user)=>{
+            if (user) { 
+                this.user=user;
+                await this.getAll();
+            } 
+            });
+        //await this.getAll();
 	},
 
     methods: {
 		async getAll() {
+            const auth = await getAuth();
 			try {
-				//TODO-->pagination
                 console.log(auth.currentUser.email)
 				const cartRef = collection(db, String(auth.currentUser.email)) //refrence the collection
 				const q = await getDocs(cartRef) //get all docs in collection
@@ -75,6 +75,7 @@
 			}
 		},
         plus(id){
+            const auth = getAuth();
             var a = document.getElementById(id).value
             try{
                 a ++
@@ -83,6 +84,11 @@
                     amount: a
                 }
                 updateDoc(doc(db, String(auth.currentUser.email), id), d_minus)
+                for (let i = 0; i < this.cart.length; i++) {
+                if (this.cart[i].name == id){
+                    this.cart[i].amount ++
+                }
+            }
             }
             catch(error){
                 console.error("Error adding:  ", error)
@@ -90,12 +96,18 @@
 
         },
         minus(id){
+            const auth = getAuth();
             var a = document.getElementById(id).value
             try{
                 if (a <= 1) {
                     a = 1
                 } else{
                     a -=1
+                    for (let i = 0; i < this.cart.length; i++) {
+                    if (this.cart[i].name == id){
+                        this.cart[i].amount --
+                    }
+                }
                 }
                 document.getElementById(id).value = a
                 const d_plus={
@@ -111,8 +123,14 @@
             return amount * price
         },
         new_delete(item){
+        const auth = getAuth();
         try{
             deleteDoc(doc(db, String(auth.currentUser.email), item))
+            for (let i = 0; i < this.cart.length; i++) {
+                if (this.cart[i].name == item){
+                    this.cart.splice(i, 1)
+                }
+            }
             alert("Delete successfully!")
         }
         catch(error){
