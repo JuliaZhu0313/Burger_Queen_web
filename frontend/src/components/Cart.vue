@@ -31,7 +31,10 @@
           @click="this.$router.push('/menu')" 
           class="button"><h3>Save and go back to Menu</h3>
     </button>
-    <button class="order">Make Payment</button>
+    <br><br>
+    <button 
+          @click="this.$router.push('/payment')"
+          class="order">Make Payment</button>
 </template>
 <script>
     import firebaseApp from '../firebase.js';
