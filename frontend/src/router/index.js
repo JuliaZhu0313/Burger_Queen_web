@@ -9,6 +9,7 @@ import Settings from '@/views/Settings.vue'
 import OrderRecords from '@/views/OrderRecords.vue'
 import HelpCentre from '@/views/HelpCentre.vue'
 import AboutUs from '@/views/AboutUs.vue'
+import Payment from '@/components/Payment.vue'
 
 const routes = [
     {
@@ -27,6 +28,13 @@ const routes = [
       component: Cart,
 
     },
+    
+    {
+        path: '/payment',
+        name: "Payment",
+        component: Payment,
+      },
+    
     {
         path: '/LogOut',
         name: "LogOut",
