@@ -34,7 +34,7 @@ export default {
 	}),
 	async mounted() {
 		//await this.getAll();
-		onAuthStateChanged(auth, (user)=>{
+		onAuthStateChanged(auth, async (user)=>{
 		if (user) {
 			this.user=user;
 			await this.getAll();
