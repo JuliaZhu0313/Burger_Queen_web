@@ -1,13 +1,13 @@
 import firebase from 'firebase/compat/app';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCVUzJNCZuJnYWi7FXZcEbcepBUV2x_KzI",
-  authDomain: "group5bt3103-5e14b.firebaseapp.com",
-  projectId: "group5bt3103-5e14b",
-  storageBucket: "group5bt3103-5e14b.appspot.com",
-  messagingSenderId: "895175588433",
-  appId: "1:895175588433:web:302f431d79f222b9dc1670"
-};
+    apiKey: "AIzaSyAAcGizBmVy0pTelPh5c9-aw-DNUF165XE",
+    authDomain: "bt3103-10098.firebaseapp.com",
+    projectId: "bt3103-10098",
+    storageBucket: "bt3103-10098.appspot.com",
+    messagingSenderId: "1055197170592",
+    appId: "1:1055197170592:web:cae220ce87a86d7bd6f2c5"
+  };
 
 firebase.initializeApp(firebaseConfig);
 
