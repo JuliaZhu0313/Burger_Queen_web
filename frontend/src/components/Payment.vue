@@ -1,4 +1,5 @@
 <template v-if="user">
+    <NavBar />
   
   <div class ="payment">
       <h1 class="section-title">Your Order</h1>
@@ -14,8 +15,8 @@
                 </div>
             </td>
             <td data-th="Price">${{ item.price }}</td>
-            <td data-th="Quantity">
-            </td>
+            <td data-th="Quantity">Quantity: {{item.amount}}</td>
+            
             <td data-th="Subtotal" class="text-center">Subtotal: ${{ subtotal(item.amount, item.price) }}</td>
             
         </div>
@@ -43,6 +44,7 @@
 
 <script>
 import firebaseApp from '../firebase.js';
+import NavBar from '@/components/NavBar.vue'
 import {collection, getDocs} from "firebase/firestore";
 import { getFirestore } from "firebase/firestore"
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
@@ -52,6 +54,9 @@ const auth = getAuth();
 
 export default {
     name: 'cart',
+    components:{
+            NavBar
+    },
 data() {
     return {
     cart: [],
@@ -60,12 +65,13 @@ data() {
    
 },
 async mounted() {
-onAuthStateChanged(auth, (user)=>{
+onAuthStateChanged(auth, async(user)=>{
 if (user) { 
     this.user=user;
+    await this.getAll();
 }
 });
-await this.getAll();
+
 },
 
 methods: {
