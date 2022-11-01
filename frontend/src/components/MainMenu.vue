@@ -33,10 +33,11 @@ export default {
 		menu: [],
 	}),
 	async mounted() {
-		await this.getAll();
+		//await this.getAll();
 		onAuthStateChanged(auth, (user)=>{
 		if (user) {
 			this.user=user;
+			await this.getAll();
 		}
 		})
 	},
