@@ -10,6 +10,7 @@ import OrderRecords from '@/views/OrderRecords.vue'
 import HelpCentre from '@/views/HelpCentre.vue'
 import AboutUs from '@/views/AboutUs.vue'
 import Payment from '@/components/Payment.vue'
+import afterorder from '@/views/AfterOrder.vue'
 
 const routes = [
     {
@@ -34,6 +35,11 @@ const routes = [
         name: "Payment",
         component: Payment,
       },
+    {
+      path: '/afterorder',
+      name: "AfterOrder",
+      component: afterorder,
+    },
     
     {
         path: '/LogOut',
