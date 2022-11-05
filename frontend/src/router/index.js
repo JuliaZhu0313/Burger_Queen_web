@@ -11,8 +11,8 @@ import OrderRecords from '@/views/OrderRecords.vue'
 import HelpCentre from '@/views/HelpCentre.vue'
 import AboutUs from '@/views/AboutUs.vue'
 import Payment from '@/components/Payment.vue'
-import Order from '@/components/Order.vue'
-import Arrived from '@/components/Arrived.vue'
+import arrived from '@/components/Arrived.vue'
+import order from '@/components/Order.vue'
 import afterorder from '@/views/AfterOrder.vue'
 
 const routes = [
@@ -27,12 +27,12 @@ const routes = [
       component: AccountSettings,
     },
     {
-      path: '/Menu',
+      path: '/menu',
       name: 'Menu',
       component: Menu,
     },
     {
-      path: '/Cart',
+      path: '/cart',
       name: 'Cart',
       component: Cart,
 
@@ -64,7 +64,7 @@ const routes = [
     },
     
     {
-        path: '/LogOut',
+        path: '/logOut',
         name: "LogOut",
         component: LogOut,
     },
