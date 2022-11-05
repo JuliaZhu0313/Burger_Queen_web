@@ -31,10 +31,7 @@
           @click="this.$router.push('/menu')" 
           class="button"><h3>Save and go back to Menu</h3>
     </button>
-    <br><br>
-    <button 
-          @click="this.$router.push('/payment')"
-          class="order">Make Payment</button>
+    <button class="order" @click="make_payment" >Make Payment</button>
 </template>
 <script>
     import firebaseApp from '../firebase.js';
@@ -140,6 +137,13 @@
                 console.error("Error removing item!")
             }
         },
+        make_payment(){
+            if (this.cart.length == 0) {
+                alert("There's nothing in your cart!")
+            } else {
+                this.$router.push('/payment')
+            }
+        }
     },
 }
 </script>
@@ -150,11 +154,14 @@ td{
 .button, .order{
     background-color: #c77414;
 	color: white;
-    margin:auto;
-    display:block;
-    border-radius: 12px;
+  display:block;
+  border-radius: 12px;
 	font-weight: bold;
-    padding: 10px 40px;
+  font-size: 15px;
+  padding: 15px;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 5px;
 }
 .empty_cart{
     text-align: center;
