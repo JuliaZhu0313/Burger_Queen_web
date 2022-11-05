@@ -26,7 +26,7 @@
           }
   
           var uiConfig = {
-              signInSuccessUrl: '/menu',
+              signInSuccessUrl: '/AccountSettings',
               signInOptions: [
                   firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                   firebase.auth.EmailAuthProvider.PROVIDER_ID,

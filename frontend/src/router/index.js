@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LogIn from '@/components/LogIn.vue'
+import AccountSettings from '@/components/AccountSettings.vue' 
 import Menu from '@/views/Menu.vue'
 import Cart from '@/views/BurgerCart.vue'
 import LogOut from '@/components/LogOut.vue'
@@ -19,6 +20,11 @@ const routes = [
       path: "/",
       name: "LogIn",
       component: LogIn,
+    },
+    {
+      path: "/AccountSettings",
+      name: "AccountSettings",
+      component: AccountSettings,
     },
     {
       path: '/Menu',
