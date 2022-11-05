@@ -30,14 +30,19 @@
     <div class="helplist7">
       <h2>FAQ:</h2>
     </div>
+    <Footer />
 </template>
 
 <script>
+import Footer from '@/components/Footer.vue'
 export default{
     name:'Help Centre',
     mounted () {
     //
-  }
+    },
+    components:{
+      Footer
+    }
 }
 </script>
 

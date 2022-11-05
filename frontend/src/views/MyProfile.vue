@@ -25,16 +25,19 @@
     <div class = "submit">
       <button id="submit" type="button" v-on:click="savetofs()"> Submit </button>
     </div>
+    <Footer />
 </template>
 
 <script>
-import {getAuth, onAuthStateChanged} from 'firebase/auth';
+import {getAuth, onAuthStateChanged} from 'firebase/auth'
 import NavBar from '@/components/NavBar.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
     name: 'MyProfile',
     components:{
         NavBar,
+        Footer
     },
     data(){
         return{

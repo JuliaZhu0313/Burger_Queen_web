@@ -10,10 +10,11 @@ import Settings from '@/views/Settings.vue'
 import OrderRecords from '@/views/OrderRecords.vue'
 import HelpCentre from '@/views/HelpCentre.vue'
 import AboutUs from '@/views/AboutUs.vue'
+import Privacy from '@/views/Privacy.vue'
 import Payment from '@/components/Payment.vue'
-import arrived from '@/components/Arrived.vue'
-import order from '@/components/Order.vue'
-import afterorder from '@/views/AfterOrder.vue'
+import Arrived from '@/components/Arrived.vue'
+import Order from '@/components/Order.vue'
+import AfterOrder from '@/views/AfterOrder.vue'
 
 const routes = [
     {
@@ -60,7 +61,7 @@ const routes = [
     {
       path: '/afterorder',
       name: "AfterOrder",
-      component: afterorder,
+      component: AfterOrder,
     },
     
     {
@@ -77,6 +78,11 @@ const routes = [
       path:'/MyProfile',
       name:"MyProfile",
       component: MyProfile,
+  },
+  {
+    path:'/Privacy',
+    name:"Privacy",
+    component: Privacy,
   },
   {
       path:'/Settings',
