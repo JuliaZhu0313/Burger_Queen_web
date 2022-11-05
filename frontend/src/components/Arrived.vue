@@ -1,23 +1,22 @@
 <template v-if="user">
-    <NavBar />
     
     <div class ="order">
           <h1 class="section-title">Current Ongoing orders</h1>
           <div class = "Time"> <h1>Arrived! Please collect your food</h1>></div>
           <div class="Rec1"><h1>Order Details</h1>
     <table>
-        <div v-for = "item in cart" :key="item.name" class="cart1">
+        <div v-for = "index in len" :key="index" class="cart1">
             <tr>
                 <div class="burger">
                 <td data-th="Product">
                     <div class="row">
                         <div>
-                            <h4>{{ item.name }}</h4>
+                            <h4>{{ value.name[index] }}</h4>
                         </div>
                     </div>
                 </td>
-                <td data-th="Price">${{ item.price }}</td>
-                <td data-th="Quantity">Quantity: {{item.amount}}</td>
+                <td data-th="Price">${{ value.price[index] }}</td>
+                <td data-th="Quantity">Quantity: {{value.amount[index]}}</td>
                 </div>
             </tr>
         </div>
@@ -28,7 +27,7 @@
     </div>
 
     <button 
-            @click="this.$router.push('/rate')"
+            @click="this.$router.push('/afterorder')"
             class="arrive">Rate on Our Service</button>
     
     
@@ -36,23 +35,21 @@
 
 <script>
 import firebaseApp from '../firebase.js';
-import NavBar from '@/components/NavBar.vue'
+
 import {collection, getDocs} from "firebase/firestore";
 import { getFirestore } from "firebase/firestore"
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
-
 const db = getFirestore(firebaseApp);
 const auth = getAuth();
-
 export default {
-    name: 'cart',
-    components:{
-            NavBar
-    },
+    name: 'arrived',
+    
 data() {
     return {
-    cart: [],
-    user: false
+        user: false,
+        order: [],
+        value: [],
+        len: 0,
     }
    
 },
@@ -63,31 +60,27 @@ if (user) {
     await this.getAll();
 }
 });
-
 },
-
 methods: {
     async getAll() {
         try {
-            //TODO-->pagination
-            console.log(auth.currentUser.email)
-            const cartRef = collection(db, String(auth.currentUser.email)) //refrence the collection
-            const q = await getDocs(cartRef) //get all docs in collection
-            q.forEach((doc) => {
-                this.cart = [...this.cart, doc.data(), ] //push to cart array
-            });
-            console.log(this.cart)
+            const path1 = String(auth.currentUser.email) + '_orders'
+              const orderRef = collection(db, path1)
+              const a = await getDocs(orderRef)
+              a.forEach((doc) => {
+                  this.order = [...this.order, doc.data(), ] //push to order array
+              });
+              console.log(this.order)
+              this.value = this.order.at(this.order.length - 1)
+              this.len = this.value.name.length - 1
         } catch (e) {
             console.log(e);
         }
     },
 }}
-
-
 </script>
 
 <style scoped>
-
 .order{
  text-align: center;
 }
@@ -99,9 +92,7 @@ methods: {
     background-color: bisque;
   border: 2px solid green ;
   font-size: 20px;
-
 }
-
 .Rec2 {
     position:absolute; 
     right:10px;
@@ -111,9 +102,7 @@ methods: {
     border: 1px solid green ;
     background-color: burlywood;
     border-radius: 12px;
-
 }
-
 .arrive{
         position:absolute; 
         background-color: #c77414;
@@ -126,6 +115,4 @@ methods: {
         left:600px;
         bottom: 70px;
     }
-
-
 </style>
