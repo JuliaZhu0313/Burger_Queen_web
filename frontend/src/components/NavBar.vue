@@ -6,7 +6,6 @@
         <br>
         <button @click="personalCentre">Personal Centre</button>
         <br>
-        <router-link to="/afterorder"> Rating </router-link> | 
         <button @click="logOut">Log Out</button>
     </div>
   </div>
