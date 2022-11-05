@@ -17,14 +17,19 @@
     <div class = "submit">
       <button id="submit" type="button" v-on:click="savetofs()"> Submit </button>
     </div>
+    <Footer />
 </template>
 
 <script>
+import Footer from '@/components/Footer.vue'
 export default{
     name:'Settings',
     mounted () {
     //
-  }
+    },
+    components: {
+      Footer
+    }
 }
 </script>
 

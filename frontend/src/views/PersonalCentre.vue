@@ -22,15 +22,19 @@
     <div class = "AboutUs">
       <button @click="AboutUs">About us</button>
     </div>
-
+    <Footer />
 </template>
 
 <script>
+import Footer from '@/components/Footer.vue'
 export default{
     name:'PersonalCentre',
     mounted () {
     //
-  },
+    },
+    components: {
+      Footer
+    },
 
   methods: {
     MyProfile: function() {

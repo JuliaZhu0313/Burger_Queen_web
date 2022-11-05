@@ -13,14 +13,19 @@
       <h1>Burger Queen Kids Club,</h1>
       <h1>I Love This Place!</h1>
     </div>
+    <Footer />
 </template>
 
 <script>
+import Footer from '../components/Footer.vue'
 export default{
     name:'AboutUs',
+    components:{
+      Footer
+    },
     mounted () {
     //
-  }
+    }
 }
 </script>
 

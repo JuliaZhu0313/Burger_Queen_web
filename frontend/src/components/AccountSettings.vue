@@ -1,25 +1,26 @@
 <template>
     <div class="topnav" style="text-align:center;" v-if="user">
         <div class="imge-holder">
-            <img src="@/assets/logo.png" alt="Burger Queen" width="120" height="80" id="logo">
+            <img src="@/assets/logo.png" alt="Burger Queen" width="200" height="140" id="logo">
         </div>
-
         <form action="">
             <h1>Account Settings</h1>
+            <div id = "Description"><h3>Please set your account to continue.</h3></div>
+            <br>
             <div class="form-group">
-                <label for="first_name">First Name: </label>
+                <label for="first_name">First Name:&nbsp;&nbsp;</label>
                 <input id="first_name" type="text" placeholder="First Name" class="input" > <br><br>
             </div>
             <div class="form-group">
-                <label for="last_name">Last Name: </label>
+                <label for="last_name">Last Name:&nbsp;&nbsp;</label>
                 <input id="last_name" type="text" placeholder="Last Name" class="input"> <br><br>
             </div>
             <div class="form-group">
-                <label for="phone">Phone Number: </label>
+                <label for="phone">Phone Number:&nbsp;&nbsp;</label>
                 <input id="phone" type="number" placeholder="Phone Number" class="input"> <br><br>
             </div>
             <div class="form-group">
-                <label for="gender">Gender: </label>
+                <label for="gender">Gender:&nbsp;&nbsp;</label>
                 <select name="" id="gender" class="select">
                     <option value="" disabled selected>Gender</option>
                     <option value="Male">Male</option>
@@ -28,15 +29,15 @@
                 </select> <br><br>
             </div>
             <div class="form-group">
-                <label for="postal_code">Postal Code: </label>
+                <label for="postal_code">Postal Code:&nbsp;&nbsp;</label>
                 <input id="postal_code" type="number" placeholder="Postal Code" class="input"> <br><br>
             </div>
             <div class="form-group">
-                <label for="address_line_1">Address Line 1: </label>
+                <label for="address_line_1">Address Line 1:&nbsp;&nbsp;</label>
                 <input id="address_line_1" type="text" placeholder="Bldg no. and Street" class="input"> <br><br>
             </div>
             <div class="form-group">
-                <label for="address_line_2">Address Line 2: </label>
+                <label for="address_line_2">Address Line 2:&nbsp;&nbsp;</label>
                 <input id="address_line_2" type="text" placeholder="Apartment or Suite" class="input"> <br><br>
             </div>
             <br>
@@ -129,15 +130,30 @@
 .topnav {
     overflow: auto;
     background-color:white;
-    width: 500px;
+    width: 600px;
     margin: auto;
     border: 1.5px solid rgb(46, 41, 41);
     border-radius: 50px;
     box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.2), 0 12px 30px 0 rgba(0, 0, 0, 0.19);
 }
 .form-group {
-    font-size: 20px;
-    
+    font-size: 20px; 
+}
+
+.form-group input{
+    width: 40%;
+    padding: 10px 10px 10px 10px;
+    font-size: 15px;
+    border: 1.5px solid rgb(46, 41, 41);
+    border-radius: 10px;
+}
+
+.form-group select{
+    width: 40%;
+    padding: 10px 10px 10px 10px;
+    font-size: 15px;
+    border: 1.5px solid rgb(46, 41, 41);
+    border-radius: 10px; 
 }
 
 
@@ -146,10 +162,12 @@
     margin: auto;
     font-size: 20px;
     overflow: auto;
+    border: 1.5px solid rgb(46, 41, 41);
+    border-radius: 10px;
+    padding: 10px 20px 10px;
 }
 #btn:hover{
     color: rgb(243,236,236);
     background-color: rgb(255,94,0);
-    box-shadow: 3px 3px grey;
 }
 </style>
