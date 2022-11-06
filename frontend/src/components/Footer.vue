@@ -4,7 +4,7 @@
     <br>
     <div id="hyperlink">
         <br>
-        <a id="aboutQB" v-on:click="AboutQB">About QUEEN BURGER</a><br>
+        <a id="aboutQB" v-on:click="AboutBQ">About QUEEN BURGER</a><br>
         <a id="helpCentre" v-on:click="HelpCentre">Help Centre</a><br>
         <a id="Privacy" v-on:click="Privacy">Privacy Policy</a><br>
     </div>
@@ -28,7 +28,7 @@ export default {
     },
 
     methods: {
-        AboutQB: function() {
+        AboutBQ: function() {
             this.$router.push("/AboutUs")
         },
 

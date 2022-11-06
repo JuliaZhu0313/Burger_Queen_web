@@ -1,52 +1,58 @@
 <template>
-    <div class="topnav" style="text-align:center;" v-if="user">
-        <div class="imge-holder">
-            <img src="@/assets/logo.png" alt="Burger Queen" width="200" height="140" id="logo">
+    <div class="setting" v-if="user">
+        <div class="img">
+            <img id = "settings_img" src="@/assets/settings_img.png" alt="Burger Queen">
         </div>
-        <form action="">
-            <h1>Account Settings</h1>
-            <div id = "Description"><h3>Please set your account to continue.</h3></div>
-            <br>
-            <div class="form-group">
-                <label for="first_name">First Name:&nbsp;&nbsp;</label>
-                <input id="first_name" type="text" placeholder="First Name" class="input" > <br><br>
+        <div class="text">
+            <div class="imge-holder">
+                <img src="@/assets/logo.png" alt="Burger Queen" width="200" height="140" id="logo">
             </div>
-            <div class="form-group">
-                <label for="last_name">Last Name:&nbsp;&nbsp;</label>
-                <input id="last_name" type="text" placeholder="Last Name" class="input"> <br><br>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number:&nbsp;&nbsp;</label>
-                <input id="phone" type="number" placeholder="Phone Number" class="input"> <br><br>
-            </div>
-            <div class="form-group">
-                <label for="gender">Gender:&nbsp;&nbsp;</label>
-                <select name="" id="gender" class="select">
-                    <option value="" disabled selected>Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Others">Others</option>
-                </select> <br><br>
-            </div>
-            <div class="form-group">
-                <label for="postal_code">Postal Code:&nbsp;&nbsp;</label>
-                <input id="postal_code" type="number" placeholder="Postal Code" class="input"> <br><br>
-            </div>
-            <div class="form-group">
-                <label for="address_line_1">Address Line 1:&nbsp;&nbsp;</label>
-                <input id="address_line_1" type="text" placeholder="Bldg no. and Street" class="input"> <br><br>
-            </div>
-            <div class="form-group">
-                <label for="address_line_2">Address Line 2:&nbsp;&nbsp;</label>
-                <input id="address_line_2" type="text" placeholder="Apartment or Suite" class="input"> <br><br>
-            </div>
-            <br>
-            <div class="form-group">
-                <button id="btn" type="button" v-on:click="savetofs()">
-                    Update & Set
-                </button> <br><br><br>
-            </div>
-        </form>
+            <form action="">
+                <h1>Account Settings</h1>
+                <div id = "Description"><h3>Set your account to continue.</h3></div>
+                <br>
+                <div class="form-group">
+                    <label for="first_name">First Name:&nbsp;&nbsp;</label>
+                    <input id="first_name" type="text" placeholder="First Name" class="input" > <br><br>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name:&nbsp;&nbsp;</label>
+                    <input id="last_name" type="text" placeholder="Last Name" class="input"> <br><br>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:&nbsp;&nbsp;</label>
+                    <input id="phone" type="number" placeholder="Phone Number" class="input"> <br><br>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:&nbsp;&nbsp;</label>
+                    <select name="" id="gender" class="select">
+                        <option value="" disabled selected>Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select> <br><br>
+                </div>
+                <div class="form-group">
+                    <label for="postal_code">Postal Code:&nbsp;&nbsp;</label>
+                    <input id="postal_code" type="number" placeholder="Postal Code" class="input"> <br><br>
+                </div>
+                <div class="form-group">
+                    <label for="address_line_1">Address Line 1:&nbsp;&nbsp;</label>
+                    <input id="address_line_1" type="text" placeholder="Bldg no. and Street" class="input"> <br><br>
+                </div>
+                <div class="form-group">
+                    <label for="address_line_2">Address Line 2:&nbsp;&nbsp;</label>
+                    <input id="address_line_2" type="text" placeholder="Apartment or Suite" class="input"> <br><br>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button id="btn" type="button" v-on:click="savetofs()">
+                        Update & Set
+                    </button> <br>
+                </div>
+            </form>
+        </div>
+            
     </div>
 </template>
   
@@ -77,6 +83,9 @@
         onAuthStateChanged(auth, (user)=>{
             if(user) {
                 this.user=user;
+                this.email = user.email;
+                this.name = user.displayName;
+                this.uid = user.uid;
             }
         })
       },
@@ -93,16 +102,11 @@
 
             alert("Updating & Setting User Profile")
 
+            console.log(this.email)
+
             try {
-                const auth=getAuth();
-                onAuthStateChanged(auth, (user)=>{
-                    if(user) {
-                        this.email = user.email;
-                        this.name = user.displayName;
-                        this.uid = user.uid;
-                    }
-                })
-                const docRef = await setDoc(doc(db, String("UserProfile") ,this.email), {
+                const path = doc(db, "UserProfile", this.email)
+                await setDoc(path, {
                     email: this.email,
                     full_name: this.name,
                     uid: this.uid,
@@ -115,7 +119,6 @@
                     postal_code: postal_code,
                     
                 })
-                console.log(docRef)
                 this.$router.push("/Menu")
             } catch(error) {
                 console.error("Error updating user profile", error);
@@ -127,47 +130,73 @@
   </script>
   
   <style scoped>
-.topnav {
-    overflow: auto;
+.setting {
+    position: relative;
+    left: 500px;
     background-color:white;
-    width: 600px;
-    margin: auto;
-    border: 1.5px solid rgb(46, 41, 41);
-    border-radius: 50px;
-    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.2), 0 12px 30px 0 rgba(0, 0, 0, 0.19);
+    width: 900px;
+    height:850px;
+    border: 1px solid rgb(197, 197, 197);
+    box-shadow: -5px 12px 15px rgba(0, 0, 0, 0.2), 5px -5px 15px rgba(0, 0, 0, 0.19);
+}
+.img{
+    position: relative;
+    text-align: left;
+    width: 428px;
+    padding: 0px 10px 0px 0px;
+}
+
+#settings_img {
+    width: 100%;
+}
+.text{
+    position: relative;
+    text-align: left;
+    width: 700px;
+    left: 500px;
+    bottom: 880px;
+    padding: 20px 20px 20px 10px;
 }
 .form-group {
     font-size: 20px; 
 }
 
 .form-group input{
-    width: 40%;
+    width: 20%;
     padding: 10px 10px 10px 10px;
     font-size: 15px;
-    border: 1.5px solid rgb(46, 41, 41);
-    border-radius: 10px;
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 3px;
 }
 
 .form-group select{
-    width: 40%;
+    width: 20%;
     padding: 10px 10px 10px 10px;
     font-size: 15px;
-    border: 1.5px solid rgb(46, 41, 41);
-    border-radius: 10px; 
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 3px; 
 }
 
 
 #btn{
     text-align: center;
-    margin: auto;
     font-size: 20px;
-    overflow: auto;
-    border: 1.5px solid rgb(46, 41, 41);
-    border-radius: 10px;
+    border-color: rgb(156, 156, 156);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
     padding: 10px 20px 10px;
 }
+
 #btn:hover{
     color: rgb(243,236,236);
     background-color: rgb(255,94,0);
+}
+
+#logo {
+    position:relative;
+    right: 60px;
+    width: 200px;
+    height: 140px;
 }
 </style>
