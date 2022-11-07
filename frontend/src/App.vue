@@ -1,20 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <MainMenu/>
+
+  <router-view/>
+
 </template>
 
 <script>
-import MainMenu from './components/MainMenu.vue'
+console.log("in App")
 
 export default {
-  name: 'App',
-  components: {
-    MainMenu
-  }
+  name: 'App'
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,15 +1,13 @@
-import { initializeApp } from 'firbase/app'
+import {initializeApp} from 'firebase/app';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA3YoZV6qofdpVd5c8NMDZtfQgymN7Hpts",
-    authDomain: "democpp-80895.firebaseapp.com",
-    projectId: "democpp-80895",
-    storageBucket: "democpp-80895.appspot.com",
-    messagingSenderId: "1007226650942",
-    appId: "1:1007226650942:web:4cffa7287f88471d2bec6f"
+    apiKey: "AIzaSyAAcGizBmVy0pTelPh5c9-aw-DNUF165XE",
+    authDomain: "bt3103-10098.firebaseapp.com",
+    projectId: "bt3103-10098",
+    storageBucket: "bt3103-10098.appspot.com",
+    messagingSenderId: "1055197170592",
+    appId: "1:1055197170592:web:cae220ce87a86d7bd6f2c5"
   };
- 
-// Initialize Firebase
-//const firebase = require('firebase')
-const firebaseApp = initializeApp(firebaseConfig);
-export default firebaseApp;
+
+  const firebaseApp = initializeApp(firebaseConfig);
+  export default firebaseApp;
