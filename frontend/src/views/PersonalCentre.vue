@@ -1,28 +1,28 @@
 <template>
-    <div class="topnav">
-      <h1>Personal Centre</h1>
-    </div>
+  <div class="topnav">
+    <h1>Personal Centre</h1>
+  </div>
 
-    <div class = "MyProfile">
-      <button @click="MyProfile">My Profile</button>
-    </div>
+  <div class = "MyProfile">
+    <button @click="MyProfile">My Profile</button>
+  </div>
 
-    <div class = "Settings">
-      <button @click="Settings">Settings</button>
-    </div>
+  <div class = "Settings">
+    <button @click="Settings">Settings</button>
+  </div>
 
-    <div class = "OrderRecords">
-      <button @click="OrderRecords">Order Records</button>
-     </div>
+  <div class = "OrderRecords">
+    <button @click="OrderRecords">Order Records</button>
+   </div>
 
-    <div class = "HelpCentre">
-      <button @click="HelpCentre">Help Centre</button>
-    </div>
+  <div class = "HelpCentre">
+    <button @click="HelpCentre">Help Centre</button>
+  </div>
 
-    <div class = "AboutUs">
-      <button @click="AboutUs">About us</button>
-    </div>
-    <Footer />
+  <div class = "AboutUs">
+    <button @click="AboutUs">About us</button>
+  </div>
+  <Footer />
 </template>
 
 <script>
@@ -69,7 +69,7 @@ export default{
   .MyProfile {
   position: relative;
   float: center;
-  width: 5cm;
+  width: 17cm;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;
@@ -89,7 +89,7 @@ export default{
   .Settings {
   position: relative;
   float: center;
-  width: 5cm;
+  width: 17cm;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;
@@ -109,7 +109,7 @@ export default{
   .OrderRecords {
   position: relative;
   float: center;
-  width: 5cm;
+  width: 17cm;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;
@@ -119,7 +119,7 @@ export default{
   margin-top: 0.5cm;
   }
   .OrderRecords button {
-  width: 5cm;
+  width: 10cm;
   height: 2cm;
   font-size: 30px;
   color:hsl(196, 87%, 15%);
@@ -129,7 +129,7 @@ export default{
   .HelpCentre {
   position: relative;
   float: center;
-  width: 5cm;
+  width: 17cm;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;
@@ -149,7 +149,7 @@ export default{
   .AboutUs {
   position: relative;
   float: center;
-  width: 5cm;
+  width: 17cm;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;

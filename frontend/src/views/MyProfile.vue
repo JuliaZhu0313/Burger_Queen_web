@@ -1,37 +1,33 @@
 <template>
-    <NavBar />
-    <div class="topnav">
-      <h1>My Profile</h1>
-    </div>
+  <NavBar />
+  <div class="topnav">
+    <h1>My Profile</h1>
+  </div>
 
-    <div class="Email">
-      <div id = "Email"><h1 v-text="email"></h1></div>
-    </div>
+  <div class="Email">
+    <div id = "Email"><h1 v-text="email"></h1></div>
+  </div>
 
-    <div class="Name">
-      <div id = "Name"><h1 v-text="name"></h1></div>
-    </div>
+  <div class="Name">
+    <div id = "Name"><h1 v-text="name"></h1></div>
+  </div>
 
-    <div class="Number" v-if="user">
-      <label for="Number">Contact Number: </label>
-      <input type="text" id="Number" required="" placeholder="=Enter your Contact Number"><br><br>
-    </div>
+  <div class="Number">
+    <div id = "Number"><h1 v-text="number"></h1></div>
+  </div>
 
-    <div class="Location" v-if="user">
-      <label for="Location">Location: </label>
-      <input type="text" id="Location" required="" placeholder="=Enter your Location"><br><br>
-    </div>
-
-    <div class = "submit">
-      <button id="submit" type="button" v-on:click="savetofs()"> Submit </button>
-    </div>
-    <Footer />
+  <div class="Location" v-if="user">
+    <div id = "Location"><h1 v-text="location"></h1></div> 
+  </div>
+  <Footer />
 </template>
 
 <script>
 import {getAuth, onAuthStateChanged} from 'firebase/auth'
+import { doc, getDoc, getFirestore } from "firebase/firestore"
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
+const auth=getAuth();
 
 export default {
     name: 'MyProfile',
@@ -44,17 +40,37 @@ export default {
             user: false,
             email: '',
             name: '',
+            number: '',
+            location:'',
+            a:{},
         }
     },
-    mounted(){
-        const auth=getAuth();
-        onAuthStateChanged(auth, (user)=>{
+    async mounted(){
+        onAuthStateChanged(auth, async (user)=>{
             if(user) {
                 this.user=user;
+                await this.getAll();
                 this.email = "Email:" + user.email;
-                this.name = "Name:" + user.displayName;
+                this.name = "Name:" + this.a.full_name;
+                this.number = "Number:" + this.a.phone;
+                this.location = "Location:" + this.a.address_line_1 + ", " + this.a.address_line_2;
             }
         })
+    },
+    methods:{
+      async getAll(){
+        const db = getFirestore()
+        const docRef = doc(db, 'UserProfile', String(auth.currentUser.email));
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          console.log("Document data:", docSnap.data());
+          this.a = docSnap.data()
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+    }
+      }
     }
 }
 </script>
@@ -72,7 +88,7 @@ export default {
   border-width: 7px;
   border-radius: 10%;
   margin-top: 0.5cm;
-  width: 15cm;
+  width: 30cm;
   height: 1.5cm;
   padding-top: 0.4cm;
   margin-left: 8cm;
@@ -88,7 +104,7 @@ export default {
   border-width: 7px;
   border-radius: 10%;
   margin-top: 0.5cm;
-  width: 15cm;
+  width: 30cm;
   height: 1.5cm;
   padding-top: 0.4cm;
   margin-left: 8cm;
@@ -104,7 +120,7 @@ export default {
   border-width: 7px;
   border-radius: 10%;
   margin-top: 0.5cm;
-  width: 15cm;
+  width: 30cm;
   height: 1.5cm;
   padding-top: 0.4cm;
   margin-left: 8cm;
@@ -125,7 +141,7 @@ export default {
   border-width: 7px;
   border-radius: 10%;
   margin-top: 0.5cm;
-  width: 15cm;
+  width: 30cm;
   height: 1.5cm;
   padding-top: 0.4cm;
   margin-left: 8cm;
@@ -140,23 +156,5 @@ export default {
   font-size: 20px;
   }
 
-  .submit {
-  position: relative;
-  float: center;
-  width: 5cm;
-  height: 0.5cm;
-  left: 13cm;
-  border-color: #F4EDE5;
-  border-style: solid;
-  border-width: 4px;
-  border-radius: 10%;
-  }
-  .submit button {
-  width: 5cm;
-  height: 0.5cm;
-  font-size: 30px;
-  color:hsl(196, 87%, 15%);
-  background: rgba(10, 52, 61, 0);
-  border:rgba(0,0,0,0);
-  }  
+  
 </style>

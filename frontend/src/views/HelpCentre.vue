@@ -1,36 +1,36 @@
 <template>
-    <div class="topnav">
-      <h1>Help Centre</h1>
-    </div>
+  <div class="topnav">
+    <h1>Help Centre</h1>
+  </div>
 
-    <div class="helplist1">
-      <h2>Get help with my orders</h2>
-    </div>
+  <div class="helplist1">
+    <h2>Get help with my orders</h2>
+  </div>
 
-    <div class="helplist2">
-      <h2>I am having trouble placing an order</h2>
-    </div>
+  <div class="helplist2">
+    <h2>I am having trouble placing an order</h2>
+  </div>
 
-    <div class="helplist3">
-      <h2>My support requests</h2>
-    </div>
+  <div class="helplist3">
+    <h2>My support requests</h2>
+  </div>
 
-    <div class="helplist4">
-      <h2>Dine in</h2>
-    </div>
+  <div class="helplist4">
+    <h2>Dine in</h2>
+  </div>
 
-    <div class="helplist5">
-      <h2>Safety Concerns</h2>
-    </div>
+  <div class="helplist5">
+    <h2>Safety Concerns</h2>
+  </div>
 
-    <div class="helplist6">
-      <h2>Vouchers and Rewards</h2>
-    </div>
+  <div class="helplist6">
+    <h2>Vouchers and Rewards</h2>
+  </div>
 
-    <div class="helplist7">
-      <h2>FAQ:</h2>
-    </div>
-    <Footer />
+  <div class="helplist7">
+    <h2>FAQ:</h2>
+  </div>
+  <Footer />
 </template>
 
 <script>
@@ -46,7 +46,7 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
   .topnav {
   overflow: auto;
   background-color:#F4EDE5;
@@ -55,7 +55,7 @@ export default{
   .helplist1 {
   position: relative;
   float: center;
-  width: 12cm;
+  width: 25cm;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -67,7 +67,7 @@ export default{
   .helplist2 {
   position: relative;
   float: center;
-  width: 12cm;
+  width: 25cm;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -79,7 +79,7 @@ export default{
   .helplist3 {
   position: relative;
   float: center;
-  width: 12cm;
+  width: 25cm;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -91,7 +91,7 @@ export default{
   .helplist4 {
   position: relative;
   float: center;
-  width: 12cm;
+  width: 25cm;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -103,7 +103,7 @@ export default{
   .helplist5 {
   position: relative;
   float: center;
-  width: 12cm;
+  width: 25cm;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -115,7 +115,7 @@ export default{
   .helplist6 {
   position: relative;
   float: center;
-  width: 12cm;
+  width: 25cm;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -127,7 +127,7 @@ export default{
   .helplist7 {
   position: relative;
   float: center;
-  width: 12cm;
+  width: 25cm;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
