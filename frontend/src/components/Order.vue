@@ -5,7 +5,8 @@
             <!--<h3> Estimated Arrival Time is {{timestamp()}} to {{addMinutes()}}</h3>-->
             <h3> Estimated Time taken is 20 mins </h3>
           </div>
-          <div class="Rec1"><h1>Order Details</h1>
+    <div class="Rec1">
+    <h1>Order Details</h1>
     <table>
         <div v-for = "index in len" :key="index" class="cart1">
             <tr>
@@ -13,12 +14,12 @@
                 <td data-th="Product">
                     <div class="row">
                         <div>
-                            <h4>{{ value.name[index] }}</h4>
+                            <h4>{{ value.name[index - 1] }}</h4>
                         </div>
                     </div>
                 </td>
-                <td data-th="Price">${{ value.price[index] }}</td>
-                <td data-th="Quantity">Quantity: {{value.amount[index]}}</td>
+                <td data-th="Price">${{ value.price[index - 1] }}</td>
+                <td data-th="Quantity">Quantity: {{value.amount[index - 1]}}</td>
                 </div>
             </tr>
         </div>
@@ -26,8 +27,7 @@
     </div>
     <br><br>
     <div class="Rec2">Address details</div>
-    </div>
-    
+    </div>   
     
     </template>
     
@@ -70,7 +70,8 @@
               });
               console.log(this.order)
               this.value = this.order.at(this.order.length - 1)
-              this.len = this.value.name.length - 1
+              this.len = this.value.name.length
+              console.log(this.value, this.len)
           } catch (e) {
               console.log(e);
           }
@@ -109,7 +110,6 @@
     .Rec1 {
         position:absolute; 
         left:10px;
-        height: 300px;
         width: 700px;
         background-color: bisque;
         border: 2px solid green ;
@@ -120,7 +120,6 @@
         position:absolute; 
         right:10px;
         font-size: 18px;
-        height: 200px;
         width: 500px;
         border: 1px solid green ;
         background-color: burlywood;
