@@ -11,12 +11,12 @@
                 <td data-th="Product">
                     <div class="row">
                         <div>
-                            <h4>{{ value.name[index] }}</h4>
+                            <h4>{{ value.name[index - 1] }}</h4>
                         </div>
                     </div>
                 </td>
-                <td data-th="Price">${{ value.price[index] }}</td>
-                <td data-th="Quantity">Quantity: {{value.amount[index]}}</td>
+                <td data-th="Price">${{ value.price[index - 1] }}</td>
+                <td data-th="Quantity">Quantity: {{value.amount[index - 1]}}</td>
                 </div>
             </tr>
         </div>
@@ -25,7 +25,6 @@
     <br><br>
     <div class="Rec2">Address details</div>
     </div>
-
     <button 
             @click="this.$router.push('/afterorder')"
             class="arrive">Rate on Our Service</button>
@@ -72,7 +71,7 @@ methods: {
               });
               console.log(this.order)
               this.value = this.order.at(this.order.length - 1)
-              this.len = this.value.name.length - 1
+              this.len = this.value.name.length
         } catch (e) {
             console.log(e);
         }
@@ -85,9 +84,10 @@ methods: {
  text-align: center;
 }
 .Rec1 {
+    display: flex;
+    flex-direction: column;
     position:absolute; 
     left:10px;
-    height: 300px;
     width: 700px;
     background-color: bisque;
   border: 2px solid green ;
@@ -97,7 +97,6 @@ methods: {
     position:absolute; 
     right:10px;
     font-size: 18px;
-    height: 200px;
     width: 500px;
     border: 1px solid green ;
     background-color: burlywood;
