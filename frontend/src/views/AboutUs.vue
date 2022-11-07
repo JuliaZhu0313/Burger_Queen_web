@@ -1,19 +1,19 @@
 <template>
-    <div class="topnav">
-      <h1>About us</h1>
-    </div>
-      
-    <div class="introduceone">
-      <h1>User Protocol &</h1>
-      <h1>User Privacy Security Protection</h1>
-    </div>
+  <div class="topnav">
+    <h1>About us</h1>
+  </div>
+    
+  <div class="introduceone">
+    <h1>User Protocol &</h1>
+    <h1>User Privacy Security Protection</h1>
+  </div>
 
-    <div class="introducetwo">
-      <h1>We are Burger Queen Team:</h1>
-      <h1>Burger Queen Kids Club,</h1>
-      <h1>I Love This Place!</h1>
-    </div>
-    <Footer />
+  <div class="introducetwo">
+    <h1>We are Burger Queen Team:</h1>
+    <h1>Burger Queen Kids Club,</h1>
+    <h1>I Love This Place!</h1>
+  </div>
+  <Footer />
 </template>
 
 <script>
@@ -38,7 +38,7 @@ export default{
   .introduceone {
   position: relative;
   float: center;
-  width: 15cm;
+  width: 30cm;
   height: 4cm;
   left: 8cm;
   border-color: #F4EDE5;
@@ -50,7 +50,7 @@ export default{
   .introducetwo {
   position: relative;
   float: center;
-  width: 15cm;
+  width: 30cm;
   height: 6cm;
   left: 8cm;
   border-color: #F4EDE5;

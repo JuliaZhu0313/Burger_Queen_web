@@ -131,8 +131,8 @@
   
   <style scoped>
 .setting {
-    position: relative;
-    left: 500px;
+    position: fixed;
+    left: 450px;
     background-color:white;
     width: 900px;
     height:850px;

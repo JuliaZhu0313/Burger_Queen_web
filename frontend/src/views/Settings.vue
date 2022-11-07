@@ -1,35 +1,77 @@
 <template>
-    <div class="topnav">
-      <h1>Settings</h1>
-    </div>
+  <div class="topnav">
+    <h1>Settings</h1>
+  </div>
 
-    <div class="Current">
-      <label for="Current">Current Password: </label>
-      <input type="text" id="Current" required="" placeholder="=Enter your Current Password"><br><br>
-      
-    </div>
+  <div class="New">
+    <label for="New">New Password: </label>
+    <input type="text" id="New" required="" placeholder="=Enter your New Password"><br><br>
+  </div>
 
-    <div class="New">
-      <label for="New">New Password: </label>
-      <input type="text" id="New" required="" placeholder="=Enter your New Password"><br><br>
-    </div>
+  <div class="Repeat">
+    <label for="Repeat">Repeat Password: </label>
+    <input type="text" id="Repeat" required="" placeholder="=Enter your Password Again"><br><br>
+  </div>
 
-    <div class = "submit">
-      <button id="submit" type="button" v-on:click="savetofs()"> Submit </button>
-    </div>
-    <Footer />
+  <div class = "submit">
+    <button id="submit" type="button" v-on:click="update()"> Submit </button>
+  </div>
+
+  <Teleport to="body">
+      <modal :show="showModal" :title="msg" @close="showModal = false"></modal>
+  </Teleport>
+  <Footer />
 </template>
 
 <script>
+import 'firebase/compat/auth';
+import 'firebaseui/dist/firebaseui.css'
+import { getAuth, updatePassword } from "firebase/auth";
+// import router from '../router';
+import Modal from '../components/Modal.vue'
 import Footer from '@/components/Footer.vue'
 export default{
     name:'Settings',
+    components: {
+      Modal,
+      Footer
+    },
+    data() {
+        return {
+            showModal: false,
+            msg: ""
+        }
+    },
     mounted () {
     //
     },
-    components: {
-      Footer
+    
+    methods:{
+      update(){
+      const auth = getAuth();
+
+      const user = auth.currentUser;
+      const newPassword = document.getElementById("New").value;
+      const repeatPassword = document.getElementById("Repeat").value;
+    
+      if (repeatPassword === newPassword){
+        updatePassword(user, newPassword).then(() => {
+        // Update successful.
+            this.msg = "You have changed the password successfully."
+            this.showModal = true
+        }).catch((error) => {
+            // An error ocurred
+            console.log(error.message)
+            this.msg = error.message
+            this.showModal = true
+        })}
+        else{
+            this.msg = "Wrong Repeat Password!"
+            this.showModal = true
+        }
+
     }
+  }
 }
 </script>
 
@@ -40,34 +82,13 @@ export default{
   align-content: center;
   }
 
-  .Current{
-  border-color: #F4EDE5;
-  border-style: solid;
-  border-width: 10px;
-  border-radius: 10%;
-  margin-top: 1.5cm;
-  width: 15cm;
-  height: 1.5cm;
-  padding-top: 0.4cm;
-  margin-left: 8cm;
-  }
-  .Current label{
-  width: 1cm;
-  font-size: 30px;
-  }
-  .Current input{
-  width: 7.5cm;
-  height: 1cm;
-  font-size: 20px;
-  }
-
   .New{
   border-color: #F4EDE5;
   border-style: solid;
   border-width: 10px;
   border-radius: 10%;
   margin-top: 1.5cm;
-  width: 15cm;
+  width: 30cm;
   height: 1.5cm;
   padding-top: 0.4cm;
   margin-left: 8cm;
@@ -82,10 +103,31 @@ export default{
   font-size: 20px;
   }
 
+  .Repeat{
+  border-color: #F4EDE5;
+  border-style: solid;
+  border-width: 10px;
+  border-radius: 10%;
+  margin-top: 1.5cm;
+  width: 30cm;
+  height: 1.5cm;
+  padding-top: 0.4cm;
+  margin-left: 8cm;
+  }
+  .Repeat label{
+  width: 1cm;
+  font-size: 30px;
+  }
+  .Repeat input{
+  width: 7.5cm;
+  height: 1cm;
+  font-size: 20px;
+  }
+
   .submit {
   position: relative;
   float: center;
-  width: 5cm;
+  width: 17cm;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;
