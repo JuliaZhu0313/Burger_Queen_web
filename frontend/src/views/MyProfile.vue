@@ -88,7 +88,7 @@ export default {
   border-width: 7px;
   border-radius: 10%;
   margin-top: 0.5cm;
-  width: 30cm;
+  width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
   margin-left: 8cm;
@@ -104,7 +104,7 @@ export default {
   border-width: 7px;
   border-radius: 10%;
   margin-top: 0.5cm;
-  width: 30cm;
+  width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
   margin-left: 8cm;
@@ -120,7 +120,7 @@ export default {
   border-width: 7px;
   border-radius: 10%;
   margin-top: 0.5cm;
-  width: 30cm;
+  width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
   margin-left: 8cm;
@@ -141,7 +141,7 @@ export default {
   border-width: 7px;
   border-radius: 10%;
   margin-top: 0.5cm;
-  width: 30cm;
+  width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
   margin-left: 8cm;

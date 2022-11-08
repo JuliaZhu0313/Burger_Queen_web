@@ -1,4 +1,5 @@
 <template>
+  <NavBar />
   <div class="topnav">
     <h1>Settings</h1>
   </div>
@@ -29,11 +30,13 @@ import 'firebaseui/dist/firebaseui.css'
 import { getAuth, updatePassword } from "firebase/auth";
 // import router from '../router';
 import Modal from '../components/Modal.vue'
+import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 export default{
     name:'Settings',
     components: {
       Modal,
+      NavBar,
       Footer
     },
     data() {
@@ -88,7 +91,7 @@ export default{
   border-width: 10px;
   border-radius: 10%;
   margin-top: 1.5cm;
-  width: 30cm;
+  width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
   margin-left: 8cm;
@@ -109,7 +112,7 @@ export default{
   border-width: 10px;
   border-radius: 10%;
   margin-top: 1.5cm;
-  width: 30cm;
+  width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
   margin-left: 8cm;
@@ -127,7 +130,7 @@ export default{
   .submit {
   position: relative;
   float: center;
-  width: 17cm;
+  width: 39%;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;

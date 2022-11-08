@@ -1,4 +1,5 @@
 <template>
+  <NavBar />
   <div class="topnav">
     <h1>Personal Centre</h1>
   </div>
@@ -26,6 +27,7 @@
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 export default{
     name:'PersonalCentre',
@@ -33,6 +35,7 @@ export default{
     //
     },
     components: {
+      NavBar,
       Footer
     },
 
@@ -69,7 +72,7 @@ export default{
   .MyProfile {
   position: relative;
   float: center;
-  width: 17cm;
+  width: 39%;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;
@@ -79,7 +82,7 @@ export default{
   margin-top: 0.5cm;
   }
   .MyProfile button {
-  width: 5cm;
+  width: 100%;
   height: 2cm;
   font-size: 30px;
   color:hsl(196, 87%, 15%);
@@ -89,7 +92,7 @@ export default{
   .Settings {
   position: relative;
   float: center;
-  width: 17cm;
+  width: 39%;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;
@@ -99,7 +102,7 @@ export default{
   margin-top: 0.5cm;
   }
   .Settings button {
-  width: 5cm;
+  width: 100%;
   height: 2cm;
   font-size: 30px;
   color:hsl(196, 87%, 15%);
@@ -109,7 +112,7 @@ export default{
   .OrderRecords {
   position: relative;
   float: center;
-  width: 17cm;
+  width: 39%;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;
@@ -119,7 +122,7 @@ export default{
   margin-top: 0.5cm;
   }
   .OrderRecords button {
-  width: 10cm;
+  width: 100%;
   height: 2cm;
   font-size: 30px;
   color:hsl(196, 87%, 15%);
@@ -129,7 +132,7 @@ export default{
   .HelpCentre {
   position: relative;
   float: center;
-  width: 17cm;
+  width: 39%;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;
@@ -139,7 +142,7 @@ export default{
   margin-top: 0.5cm;
   }
   .HelpCentre button {
-  width: 5cm;
+  width: 100%;
   height: 2cm;
   font-size: 30px;
   color:hsl(196, 87%, 15%);
@@ -149,7 +152,7 @@ export default{
   .AboutUs {
   position: relative;
   float: center;
-  width: 17cm;
+  width: 39%;
   height: 2cm;
   left: 13cm;
   border-color: #F4EDE5;
@@ -159,7 +162,7 @@ export default{
   margin-top: 0.5cm;
   } 
   .AboutUs button {
-  width: 5cm;
+  width: 100%;
   height: 2cm;
   font-size: 30px;
   color:hsl(196, 87%, 15%);
