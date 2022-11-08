@@ -1,4 +1,5 @@
 <template>
+  <NavBar />
   <div class="topnav">
     <h1>Order Records</h1>
   </div>
@@ -21,6 +22,7 @@
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 import {collection, getDocs} from "firebase/firestore"
 import { getFirestore } from "firebase/firestore"
@@ -70,6 +72,7 @@ export default{
     }
   },
     components: {
+      NavBar,
       Footer
     }
 }
@@ -88,7 +91,7 @@ export default{
   border-width: 10px;
   border-radius: 10%;
   margin-top: 1.5cm;
-  width: 30cm;
+  width: 62%;
   padding-top: 0.4cm;
   margin-left: 8cm;
   }

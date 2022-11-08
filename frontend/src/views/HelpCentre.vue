@@ -1,4 +1,5 @@
 <template>
+  <NavBar />
   <div class="topnav">
     <h1>Help Centre</h1>
   </div>
@@ -34,6 +35,7 @@
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 export default{
     name:'Help Centre',
@@ -41,6 +43,7 @@ export default{
     //
     },
     components:{
+      NavBar,
       Footer
     }
 }
@@ -55,7 +58,7 @@ export default{
   .helplist1 {
   position: relative;
   float: center;
-  width: 25cm;
+  width: 57%;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -67,7 +70,7 @@ export default{
   .helplist2 {
   position: relative;
   float: center;
-  width: 25cm;
+  width: 57%;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -79,7 +82,7 @@ export default{
   .helplist3 {
   position: relative;
   float: center;
-  width: 25cm;
+  width: 57%;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -91,7 +94,7 @@ export default{
   .helplist4 {
   position: relative;
   float: center;
-  width: 25cm;
+  width: 57%;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -103,7 +106,7 @@ export default{
   .helplist5 {
   position: relative;
   float: center;
-  width: 25cm;
+  width: 57%;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -115,7 +118,7 @@ export default{
   .helplist6 {
   position: relative;
   float: center;
-  width: 25cm;
+  width: 57%;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;
@@ -127,7 +130,7 @@ export default{
   .helplist7 {
   position: relative;
   float: center;
-  width: 25cm;
+  width: 57%;
   height: 2cm;
   left: 9.3cm;
   border-color: #F4EDE5;

@@ -1,4 +1,5 @@
 <template>
+    <NavBar />
     <div class="topnav">
       <h1>Privacy Policy</h1>
     </div>
@@ -90,6 +91,7 @@
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
 export default{
     name:'Privacy',
@@ -97,6 +99,7 @@ export default{
     //
     },
     components: {
+        NavBar,
         Footer
     }
 }
