@@ -1,9 +1,10 @@
 <template v-if="user">
+<NavBar />
     <div class ="order">
           <h1 class="section-title">Current Ongoing orders</h1>
           <div class = "Time"> Food is on the way 
-            <!--<h3> Estimated Arrival Time is {{timestamp()}} to {{addMinutes()}}</h3>-->
-            <h3> Estimated Time taken is 20 mins </h3>
+            <h3> Estimated Arrival Time is {{timestamp()}} to {{addMinutes()}} in 20 mins</h3>
+            <!--<h3> Estimated Time taken is 20 mins </h3>-->
           </div>
     <div class="Rec1">
     <h1>Order Details</h1>
@@ -26,26 +27,33 @@
     </table>
     </div>
     <br><br>
-    <div class="Rec2">Address details</div>
+    <div class="Rec2"><h1>Address details</h1>
+        <h4>{{profile.address_line_1}} , {{profile.address_line_2}}</h4>
+    </div>
     </div>   
     
     </template>
     
     <script>
+    import NavBar from '@/components/NavBar.vue'
     import firebaseApp from '../firebase.js';
     import {collection, getDocs} from "firebase/firestore";
-    import { getFirestore } from "firebase/firestore"
+    import { getFirestore } from "firebase/firestore";
+    import { doc,getDoc } from "firebase/firestore";
     import {getAuth, onAuthStateChanged} from 'firebase/auth';
 
     const db = getFirestore(firebaseApp);
     const auth = getAuth();
     export default {
         name: 'order',
+        components:{
+            NavBar,},
     data() {
         return {
         user: false,
         order: [],
         value: [],
+        profile: {},
         len: 0,
         }
        
@@ -72,6 +80,10 @@
               this.value = this.order.at(this.order.length - 1)
               this.len = this.value.name.length
               console.log(this.value, this.len)
+
+              const docRef = doc(db, 'UserProfile', String(auth.currentUser.email));
+              const c = await getDoc(docRef)
+              this.profile = c.data()
           } catch (e) {
               console.log(e);
           }
