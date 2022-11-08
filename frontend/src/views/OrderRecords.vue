@@ -5,7 +5,7 @@
   </div>
 
   <div class="order" v-for="item in order" :key="item.date">
-    {{ item.date }}
+    {{ item.date.toDate() }}
     <div class="food"> 
       <div class="name">Dish name</div>
       <div class="amount">Dish amount</div>
