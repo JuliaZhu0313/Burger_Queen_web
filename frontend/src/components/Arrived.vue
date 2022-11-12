@@ -1,8 +1,10 @@
 <template v-if="user">
     <NavBar />
     <div class ="order">
+        <div class="div1">
           <h1 class="section-title">Current Ongoing orders</h1>
-          <div class = "Time"> <h1>Arrived! Please collect your food</h1>></div>
+          <div class = "Time"> <h1>Arrived! Please collect your food</h1></div>
+        </div>
           <div class="Rec1"><h1>Order Details</h1>
     <table>
         <div v-for = "index in len" :key="index" class="cart1">
@@ -27,10 +29,13 @@
         <h4>{{profile.address_line_1}} , {{profile.address_line_2}}</h4>
     
     </div>
+    <div class="btn">
+        <button 
+                @click="this.$router.push('/menu')"
+                class="arrive">Return to Menu
+        </button>
     </div>
-    <button 
-            @click="this.$router.push('/afterorder')"
-            class="arrive">Rate on Our Service</button>
+</div>
     
     
     </template>
@@ -107,36 +112,70 @@ methods: {
 
 <style scoped>
 .order{
- text-align: center;
+ /*text-align: center;*/
+ background-color:white;
+    /*display: flex;*/
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    border: 1px solid rgb(197, 197, 197);
+    box-shadow: -5px 12px 15px rgba(0, 0, 0, 0.2), 5px -5px 15px rgba(0, 0, 0, 0.19);
 }
+.div1{
+        width: 100%;
+        vertical-align: top;
+        height: 30%;
+    }
 .Rec1 {
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     position:absolute; 
     left:10px;
     width: 700px;
     background-color: bisque;
   border: 2px solid green ;
-  font-size: 20px;
+  font-size: 20px;*/
+    float: left;
+        width: 100%;
+        /*min-height: 48%;*/
+        background-color: bisque;
+        border: 2px solid green ;
+        font-size: 20px;
 }
 .Rec2 {
-    position:absolute; 
+    /*position:absolute; 
     right:10px;
     font-size: 18px;
     width: 500px;
     border: 1px solid green ;
     background-color: burlywood;
-    border-radius: 12px;
+    border-radius: 12px;*/
+    float: left;
+        width: 100%;
+        /*min-height: 48%;*/
+        border: 1px solid green ;
+        background-color: burlywood;
+        border-radius: 12px;
+        font-size: 18px;
 }
-.arrive{
-        
-        background-color: #c77414;
+.btn{
+        /*background-color: #c77414;
         color: white;
         margin:auto;
         display:block;
         border-radius: 12px;
         font-weight: bold;
-        padding: 20px 60px;
+        padding: 20px 60px;*/
+    width: 100%;
+    padding: 10px;
+    float: left;
     
-    }
+}
+.arrive{
+    background-color: #c77414;
+    color: white;
+    margin:auto;
+    border-radius: 12px;
+    font-weight: bold;
+}
 </style>
