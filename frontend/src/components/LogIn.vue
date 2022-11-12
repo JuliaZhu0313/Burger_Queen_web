@@ -63,41 +63,33 @@
 }
 
 .login {
-    position: fixed;
-    top: 100px;
-    right: 400px; 
     background-color:white;
-    width: 1000px;
-    height: 700px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
     border: 1px solid rgb(197, 197, 197);
     box-shadow: -5px 12px 15px rgba(0, 0, 0, 0.2), 5px -5px 15px rgba(0, 0, 0, 0.19);
+
 }
 .img{
-    position: relative;
-    text-align: left;
-    width: 486px;
-    padding: 0px 10px 0px 0px;
+    width: 48%;
+    float: left;
 }
-
 #login_img {
     width: 100%;
 }
 .text{
-    position: relative;
+    float: right;
+    width: 48%;
     text-align: center;
-    width: 500px;
-    left: 480px;
-    bottom: 710px;
-    padding: 20px 20px 20px 10px;
 }
 
 #firebaseui-auth-container {
-    position:relative;
     text-align: left;
 }
 
 #logo {
-    position:relative;
     width: 200px;
     height: 140px;
 }
