@@ -131,31 +131,25 @@
   
   <style scoped>
 .setting {
-    position: fixed;
-    left: 450px;
     background-color:white;
-    width: 900px;
-    height:850px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
     border: 1px solid rgb(197, 197, 197);
     box-shadow: -5px 12px 15px rgba(0, 0, 0, 0.2), 5px -5px 15px rgba(0, 0, 0, 0.19);
 }
 .img{
-    position: relative;
-    text-align: left;
-    width: 428px;
-    padding: 0px 10px 0px 0px;
+    width: 38%;
+    float: left;
 }
-
 #settings_img {
     width: 100%;
 }
 .text{
-    position: relative;
-    text-align: left;
-    width: 700px;
-    left: 500px;
-    bottom: 880px;
-    padding: 20px 20px 20px 10px;
+    float: right;
+    width: 58%;
+    text-align: center;
 }
 .form-group {
     font-size: 20px; 
