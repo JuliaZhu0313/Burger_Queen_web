@@ -131,17 +131,22 @@
   
   <style scoped>
 .setting {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     background-color:white;
     display: flex;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
     border: 1px solid rgb(197, 197, 197);
     box-shadow: -5px 12px 15px rgba(0, 0, 0, 0.2), 5px -5px 15px rgba(0, 0, 0, 0.19);
 }
 .img{
-    width: 38%;
+    width: 48%;
     float: left;
+    margin: 0.5% 0.5% 0% 0.5%;
 }
 #settings_img {
     width: 100%;
@@ -156,7 +161,7 @@
 }
 
 .form-group input{
-    width: 20%;
+    width: 26%;
     padding: 10px 10px 10px 10px;
     font-size: 15px;
     border: 1px solid rgb(156, 156, 156);
@@ -164,7 +169,7 @@
 }
 
 .form-group select{
-    width: 20%;
+    width: 26%;
     padding: 10px 10px 10px 10px;
     font-size: 15px;
     border: 1px solid rgb(156, 156, 156);
@@ -188,8 +193,6 @@
 }
 
 #logo {
-    position:relative;
-    right: 60px;
     width: 200px;
     height: 140px;
 }
