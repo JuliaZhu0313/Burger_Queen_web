@@ -2,7 +2,7 @@
   <section class="menu section bd-container" id="home">
 
 <div>
-    <h2 class="section-title">Burger Menu</h2>
+	<h2 class="section-title">Burgers</h2>
     <div class="menu">
         <div class="menu_content" v-for="burger in menu" :key="burger.name">
             <img :src="burger.imageAddress" alt="" class="menu_img">
@@ -13,7 +13,44 @@
                 Add To Cart
 			</button>
         </div>
-    </div>
+	</div>
+	<br>
+	<h2 class="section-title">Sides</h2>
+	<div class="menu">
+		<div class="menu_content" v-for="side in menu_sides" :key="side.name">
+            <img :src="side.imageAddress" alt="" class="menu_image">
+            <h3 class="menu_name">{{side.name}}</h3>
+            <span class="menu_price">${{side.price}}</span>
+			<br>
+            <button @click="addToCart(side)" class="menu_button">
+                Add To Cart
+			</button>
+        </div>
+	</div>
+	<h2 class="section-title">Beverages</h2>
+	<div class="menu">
+		<div class="menu_content" v-for="beverage in menu_beverages" :key="beverage.name">
+            <img :src="beverage.imageAddress" alt="" class="menu_image">
+            <h3 class="menu_name">{{beverage.name}}</h3>
+            <span class="menu_price">${{beverage.price}}</span>
+			<br>
+            <button @click="addToCart(beverage)" class="menu_button">
+                Add To Cart
+			</button>
+        </div>
+	</div>
+	<h2 class="section-title">Sweets</h2>
+	<div class="menu">
+		<div class="menu_content" v-for="sweet in menu_sweets" :key="sweet.name">
+            <img :src="sweet.imageAddress" alt="" class="menu_image">
+            <h3 class="menu_name">{{sweet.name}}</h3>
+            <span class="menu_price">${{sweet.price}}</span>
+			<br>
+            <button @click="addToCart(sweet)" class="menu_button">
+                Add To Cart
+			</button>
+        </div>
+	</div>
 </div>
 </section>
 </template>
@@ -31,6 +68,9 @@ export default {
     name: 'mainmenu',
 	data: () => ({
 		menu: [],
+		menu_sides: [],
+		menu_beverages: [],
+		menu_sweets: [],
 	}),
 	async mounted() {
 		//await this.getAll();
@@ -46,9 +86,24 @@ export default {
 			try {
 				//TODO-->pagination
 				const menuRef = collection(db, "menu") //refrence the collection
+				const sidesRef = collection(db, "menu_sides")
+				const beveragesRef = collection(db, "menu_beverages")
+				const sweetsRef = collection(db, "menu_sweets")
 				const q = await getDocs(menuRef) //get all docs in collection
+				const q_sides = await getDocs(sidesRef)
+				const q_beverages = await getDocs(beveragesRef)
+				const q_sweets = await getDocs(sweetsRef)
 				q.forEach((doc) => {
 					this.menu = [...this.menu, doc.data(), ] //push to menu array
+				});
+				q_sides.forEach((doc) => {
+					this.menu_sides = [...this.menu_sides, doc.data(), ] //push to menu_sides array
+				});
+				q_beverages.forEach((doc) => {
+					this.menu_beverages = [...this.menu_beverages, doc.data(), ] //push to menu_beverages array
+				});
+				q_sweets.forEach((doc) => {
+					this.menu_sweets = [...this.menu_sweets, doc.data(), ] //push to menu_sweets array
 				});
 				console.log(this.menu)
 			} catch (e) {
@@ -80,7 +135,7 @@ export default {
     float: left;
 	border-radius: 25px;
 	border: 2px solid #a4670c;
-	margin: 30px;
+	margin: 2%;
 	align-items: center;
 }
 .menu{
@@ -89,15 +144,26 @@ export default {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-
+	margin: 0% 2% 0% 2%;
 }
 .menu_button{
 	background-color: #c77414;
 	color: white;
 	text-align: center;
+	margin: 4% 4% 4% 4%;
 	border-radius: 12px;
+	border-color: rgb(102, 102, 102);
+	border-style: solid;
+	border-width: 1px;
 	font-weight: bold;
+	font-size: 20px;
+}
 
+.menu_image{
+	width:70%;
+}
+.section-title{
+	font-size: 40px;
 }
 
 
