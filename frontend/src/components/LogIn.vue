@@ -63,11 +63,15 @@
 }
 
 .login {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     background-color:white;
     display: flex;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
     border: 1px solid rgb(197, 197, 197);
     box-shadow: -5px 12px 15px rgba(0, 0, 0, 0.2), 5px -5px 15px rgba(0, 0, 0, 0.19);
 
@@ -77,7 +81,9 @@
     float: left;
 }
 #login_img {
+    margin: 1% 1% 0% 1%;
     width: 100%;
+    height: 500%;
 }
 .text{
     float: right;
