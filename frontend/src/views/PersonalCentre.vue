@@ -74,7 +74,7 @@ export default{
   float: center;
   width: 39%;
   height: 2cm;
-  left: 13cm;
+  left: 30%;
   border-color: #F4EDE5;
   border-style: solid;
   border-width: 4px;
@@ -94,7 +94,7 @@ export default{
   float: center;
   width: 39%;
   height: 2cm;
-  left: 13cm;
+  left: 30%;
   border-color: #F4EDE5;
   border-style: solid;
   border-width: 4px;
@@ -114,7 +114,7 @@ export default{
   float: center;
   width: 39%;
   height: 2cm;
-  left: 13cm;
+  left: 30%;
   border-color: #F4EDE5;
   border-style: solid;
   border-width: 4px;
@@ -134,7 +134,7 @@ export default{
   float: center;
   width: 39%;
   height: 2cm;
-  left: 13cm;
+  left: 30%;
   border-color: #F4EDE5;
   border-style: solid;
   border-width: 4px;
@@ -154,7 +154,7 @@ export default{
   float: center;
   width: 39%;
   height: 2cm;
-  left: 13cm;
+  left: 30%;
   border-color: #F4EDE5;
   border-style: solid;
   border-width: 4px;

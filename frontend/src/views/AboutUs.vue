@@ -47,7 +47,7 @@ export default{
   float: center;
   width: 64%;
   height: 4cm;
-  left: 8cm;
+  left: 18%;
   border-color: #F4EDE5;
   border-style: solid;
   border-width: 4px;
@@ -67,7 +67,7 @@ export default{
   float: center;
   width: 64%;
   height: 6cm;
-  left: 8cm;
+  left: 18%;
   border-color: #F4EDE5;
   border-style: solid;
   border-width: 4px;

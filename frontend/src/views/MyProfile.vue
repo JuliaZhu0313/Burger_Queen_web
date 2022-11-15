@@ -91,7 +91,7 @@ export default {
   width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
-  margin-left: 8cm;
+  margin-left: 19%;
   }
   .Email label{
   width: 1cm;
@@ -107,7 +107,7 @@ export default {
   width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
-  margin-left: 8cm;
+  margin-left: 19%;
   }
   .Name label{
   width: 1cm;
@@ -123,7 +123,7 @@ export default {
   width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
-  margin-left: 8cm;
+  margin-left: 19%;
   }
   .Number label{
   width: 1cm;
@@ -144,7 +144,7 @@ export default {
   width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
-  margin-left: 8cm;
+  margin-left: 19%;
   }
   .Location label{
   width: 1cm;

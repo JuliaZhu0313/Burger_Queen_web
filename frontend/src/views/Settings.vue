@@ -94,7 +94,7 @@ export default{
   width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
-  margin-left: 8cm;
+  margin-left: 19%;
   }
   .New label{
   width: 1cm;
@@ -115,7 +115,7 @@ export default{
   width: 62%;
   height: 1.5cm;
   padding-top: 0.4cm;
-  margin-left: 8cm;
+  margin-left: 19%;
   }
   .Repeat label{
   width: 1cm;
@@ -132,7 +132,7 @@ export default{
   float: center;
   width: 39%;
   height: 2cm;
-  left: 13cm;
+  left: 31%;
   border-color: #F4EDE5;
   border-style: solid;
   border-width: 4px;
