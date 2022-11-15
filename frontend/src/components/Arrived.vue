@@ -33,7 +33,7 @@
     <div class="btn">
         <button 
                 @click="this.$router.push('/afterorder')"
-                class="arrive">Return to Menu
+                class="arrive">Rating
         </button>
     </div>
 </div>
