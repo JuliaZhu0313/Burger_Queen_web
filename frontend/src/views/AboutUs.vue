@@ -59,7 +59,8 @@ export default{
   height: 2cm;
   background: rgba(10, 52, 61, 0);
   border:rgba(0,0,0,0);
-  font-size: 15.5px;
+  /*font-size: 15.5px;*/
+  font-size: 1vw;
   color: #293b45;
   }
   .introducetwo {
@@ -73,5 +74,6 @@ export default{
   border-width: 4px;
   border-radius: 10%;
   margin-top: 0.5cm;
+  font-size: 1vw;
   }    
 </style>
