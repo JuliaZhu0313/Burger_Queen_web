@@ -6,7 +6,7 @@
           @click="this.$router.push('/menu')" 
           class="button"><h3>Go back to Menu</h3>
     </button>
-  </template>
+</template>
   
   <script>
   import { defineComponent } from "vue";

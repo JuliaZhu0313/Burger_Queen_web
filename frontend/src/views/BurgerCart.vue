@@ -1,5 +1,5 @@
 <template>
-<img src="@/assets/logo.png" alt="Burger Queen" width="100" height="100" id="logo">
+<img src="@/assets/logo.png" alt="Burger Queen" width="130" height="100" id="logo">
 <NavBar />
 <Cart_new />
 <Footer />

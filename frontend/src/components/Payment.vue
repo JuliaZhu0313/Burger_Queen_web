@@ -1,5 +1,5 @@
 <template v-if="user">
-  <NavBar />
+    <NavBar />
     <div class ="payment">
         <h1 class="section-title">Your Order</h1>
         <table>
