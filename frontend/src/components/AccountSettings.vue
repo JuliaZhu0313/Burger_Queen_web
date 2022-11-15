@@ -131,22 +131,17 @@
   
   <style scoped>
 .setting {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     background-color:white;
     display: flex;
     align-items: center;
     text-align: center;
+    min-height: 100vh;
     border: 1px solid rgb(197, 197, 197);
     box-shadow: -5px 12px 15px rgba(0, 0, 0, 0.2), 5px -5px 15px rgba(0, 0, 0, 0.19);
 }
 .img{
-    width: 48%;
+    width: 38%;
     float: left;
-    margin: 0.5% 0.5% 0% 0.5%;
 }
 #settings_img {
     width: 100%;
@@ -157,21 +152,24 @@
     text-align: center;
 }
 .form-group {
-    font-size: 20px; 
+    /*font-size: 20px; */
+    font-size: 2vw;
 }
 
 .form-group input{
-    width: 26%;
+    width: 20%;
     padding: 10px 10px 10px 10px;
-    font-size: 15px;
+    /*font-size: 15px;*/
+    font-size: 1vw;
     border: 1px solid rgb(156, 156, 156);
     border-radius: 3px;
 }
 
 .form-group select{
-    width: 26%;
+    width: 20%;
     padding: 10px 10px 10px 10px;
-    font-size: 15px;
+    /*font-size: 15px;*/
+    font-size: 1vw;
     border: 1px solid rgb(156, 156, 156);
     border-radius: 3px; 
 }
@@ -179,7 +177,8 @@
 
 #btn{
     text-align: center;
-    font-size: 20px;
+    /*font-size: 20px;*/
+    font-size: 2vw;
     border-color: rgb(156, 156, 156);
     border-width: 1px;
     border-style: solid;
@@ -193,6 +192,8 @@
 }
 
 #logo {
+    position:relative;
+    right: 60px;
     width: 200px;
     height: 140px;
 }
