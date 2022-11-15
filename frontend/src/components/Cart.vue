@@ -3,15 +3,13 @@
     <div v-for = "item in cart" :key="item.name" class="cart1">
         <tr>
             <div class="burger">
-            <td data-th="Product">
+            <td>
                 <div class="row">
-                    <div>
                         <h4>{{ item.name }}</h4>
-                    </div>
                 </div>
             </td>
-            <td data-th="Price">${{ item.price }}</td>
-            <td data-th="Quantity">
+            <td>${{ item.price }}</td>
+            <td>
                 <button class="minus" @click="minus(item.name)" type="button">-</button>
                 <input type="number" :value="item.amount" min="1" :id="item.name">
                 <button  class="plus" @click = "plus(item.name)" type="button">+</button>
@@ -149,7 +147,8 @@
 </script>
 <style scoped>
 td{
-    padding: 15px;
+    /*padding: 15px;*/
+    width: 300px;
 }
 .button, .order{
     background-color: #c77414;
@@ -157,7 +156,8 @@ td{
   display:block;
   border-radius: 12px;
 	font-weight: bold;
-  font-size: 15px;
+  /*font-size: 15px;*/
+  font-size: 2vw;
   padding: 15px;
   width: 40%;
   margin: auto;
@@ -165,5 +165,8 @@ td{
 }
 .empty_cart{
     text-align: center;
+}
+table, td, th {
+  border: 1px solid black;
 }
 </style>
