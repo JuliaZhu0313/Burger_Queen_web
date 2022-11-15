@@ -146,7 +146,8 @@
         /*min-height: 48%;*/
         background-color: bisque;
         border: 2px solid green ;
-        font-size: 20px;
+        /*font-size: 20px;*/
+        font-size: 2vw;
     }
     .Rec2 {
         /*position:absolute; 
@@ -163,6 +164,7 @@
         border: 1px solid green ;
         background-color: burlywood;
         border-radius: 12px;
-        font-size: 18px;
+        /*font-size: 18px;*/
+        font-size: 1.8vw;
     }
     </style>
