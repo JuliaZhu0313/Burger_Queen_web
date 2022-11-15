@@ -96,7 +96,7 @@ export default{
   float: center;
   width: 57%;
   height: 2cm;
-  left: 9.3cm;
+  left: 21%;
   border-color: #F4EDE5;
   border-style: solid;
   border-width: 4px;
