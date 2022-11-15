@@ -14,7 +14,7 @@
                   </div>
               </td>
               <td data-th="Price">${{ item.price }}</td>
-              <td data-th="Quantity">
+              <td data-th="Quantity">{{ item.amount }}
               </td>
               <td data-th="Subtotal" class="text-center">Subtotal: ${{ subtotal(item.amount, item.price) }}</td>
               
@@ -158,7 +158,8 @@
   }
   td{
       text-align: center;
-      padding: 15px;
+      /*padding: 15px;*/
+      width: 500px;
   }
   .imagebox {
     position: relative;
@@ -180,9 +181,10 @@
   }
   .first_line {
               position: absolute;
-              top: 40px;
-              left: 100px;
-              font-size: 50px;
+              top: 30px;
+              left: 80px;
+              /*font-size: 50px;*/
+              font-size: 4vw;
               color: orange
           }
     
@@ -190,7 +192,8 @@
               position: absolute;
               bottom: 150px;
               left: 30px;
-              font-size: 25px;
+              /*font-size: 25px;*/
+              font-size: 1.8vw;
           }
   .button {
       position: absolute;
@@ -204,4 +207,11 @@
       bottom: 30px;
       left: 170px;
   }
+  table, td, th {
+  border: 1px solid black;
+}
+.pay_btn button{
+    background-color: #c77414;
+    color: white;
+}
   </style>
