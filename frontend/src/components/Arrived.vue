@@ -32,7 +32,7 @@
     </div>
     <div class="btn">
         <button 
-                @click="this.$router.push('/menu')"
+                @click="this.$router.push('/afterorder')"
                 class="arrive">Return to Menu
         </button>
     </div>
