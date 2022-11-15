@@ -56,7 +56,7 @@ export default {
     color: white;
 }
 #hyperlink {
-    padding: 0px 580px 0px;
+    padding: 0% 34% 0%;
     text-align: left;
 }
 /* visited link */

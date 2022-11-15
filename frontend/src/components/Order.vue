@@ -1,4 +1,5 @@
 <template v-if="user">
+<img src="@/assets/logo.png" alt="Burger Queen" width="130" height="100" id="logo">
 <NavBar />
     <div class ="order">
         <div class="div1">

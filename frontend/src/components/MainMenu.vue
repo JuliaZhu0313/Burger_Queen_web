@@ -159,6 +159,11 @@ export default {
 	font-size: 20px;
 }
 
+.menu_button:hover{
+    color: rgb(243,236,236);
+    background-color: rgb(255,94,0);
+}
+
 .menu_image{
 	width:70%;
 }
