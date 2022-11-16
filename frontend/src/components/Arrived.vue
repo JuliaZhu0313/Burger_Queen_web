@@ -142,7 +142,7 @@ methods: {
         background-color: bisque;
         border: 2px solid green ;
         /*font-size: 20px;*/
-        font-size: 2vw;
+        /*font-size: 2vw;*/
 }
 .Rec2 {
     /*position:absolute; 
@@ -159,7 +159,7 @@ methods: {
         background-color: burlywood;
         border-radius: 12px;
         /*font-size: 18px;*/
-        font-size: 1.8vw;
+        /*font-size: 1.8vw;*/
 }
 .btn{
         /*background-color: #c77414;
