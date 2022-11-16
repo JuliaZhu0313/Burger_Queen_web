@@ -140,7 +140,7 @@
             console.log(data)
             await setDoc(doc(db, path, unique_num),data)
             this.cart.splice(0,this.cart.length)
-            alert("Paid successfullt")
+            alert("Paid successfully!")
             this.paid = true
         } catch(e) {
             console.log(e);
