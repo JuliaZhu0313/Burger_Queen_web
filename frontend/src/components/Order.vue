@@ -1,6 +1,6 @@
 <template v-if="user">
 <img src="@/assets/logo.png" alt="Burger Queen" width="130" height="100" id="logo">
-<NavBar />
+<!--<NavBar />-->
     <div class ="order">
         <div class="div1">
           <h1 class="section-title">Current Ongoing orders</h1>
@@ -38,7 +38,7 @@
     </template>
     
     <script>
-    import NavBar from '@/components/NavBar.vue'
+    //import NavBar from '@/components/NavBar.vue'
     import firebaseApp from '../firebase.js';
     import {collection, getDocs} from "firebase/firestore";
     import { getFirestore } from "firebase/firestore";
@@ -50,7 +50,8 @@
     export default {
         name: 'order',
         components:{
-            NavBar,},
+            //NavBar,
+            },
     data() {
         return {
         user: false,
