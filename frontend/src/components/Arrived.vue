@@ -114,14 +114,22 @@ methods: {
 
 <style scoped>
 .order{
- /*text-align: center;*/
+    position: absolute;
+    margin:0;
+    top:50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    /*display: flex;
+  justify-content: center;*/
+ text-align: center;
+ 
+  /*margin: -25px 0 0 -25px;*/
  background-color:white;
     /*display: flex;*/
-    align-items: center;
-    text-align: center;
     min-height: 100vh;
     border: 1px solid rgb(197, 197, 197);
-    box-shadow: -5px 12px 15px rgba(0, 0, 0, 0.2), 5px -5px 15px rgba(0, 0, 0, 0.19);
+    /*box-shadow: -5px 12px 15px rgba(0, 0, 0, 0.2), 5px -5px 15px rgba(0, 0, 0, 0.19);*/
 }
 .div1{
         width: 100%;
@@ -181,5 +189,14 @@ methods: {
     margin:auto;
     border-radius: 12px;
     font-weight: bold;
+}
+
+#logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    top: 20px;
+    
 }
 </style>
