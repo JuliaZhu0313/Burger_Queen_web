@@ -9,7 +9,7 @@
   </div>
 
   <div class = "Settings">
-    <button @click="Settings">Settings</button>
+    <button @click="Settings">Change Password</button>
   </div>
 
   <div class = "OrderRecords">
